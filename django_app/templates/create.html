@@ -1,0 +1,12 @@
+
+{% if not created %}
+
+<form action="" method="Post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit"> submit</button>
+</form>
+{% else  %}
+   <p> your article is created </p>
+   <a href='search/'>{{object.tittle}} - {{object.content}}</a>
+{% endif %}

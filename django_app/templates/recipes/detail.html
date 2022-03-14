@@ -1,0 +1,20 @@
+
+{% block content  %}
+
+    <h2> User {{object.user }} {% if object.get_edit_url %}<small>
+        <a href={{ object.get_edit_url}}>edit</a>
+        <a href={{ object.get_delete_url}}>delete</a>
+    {% endif %}
+
+
+        </small> </h2>
+    <p>{{ object.directions}}</p>
+    <p>{{ object.description }}</p>
+    <p> {{ object.timestamp }}</p>
+    {% for ingredient in object.get_ingredients_childern %}
+          <h1>{{ ingredient.name }}</h1>
+          <h1>{{ ingredient.as_imperial }}</h1>
+          <h1>{{ ingredient.as_mks}}</h1>
+    {% endfor %}
+
+{% endblock %}

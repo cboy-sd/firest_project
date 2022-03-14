@@ -1,0 +1,14 @@
+{% if message %}
+    <p>{{ message }}</p>
+{% endif %}
+<form action='' method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+<h3>Ingredients</h3>
+    {% if form_2 %}
+        {{ form_2.as_p }}
+    {% endif %}
+    <button type="submit">save</button>
+</form>
+
+

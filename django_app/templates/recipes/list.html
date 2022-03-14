@@ -1,0 +1,36 @@
+
+{% block content %}
+
+    <h1> My Recipes</h1>
+    <a href='{% url "recipes:craete" %}'> add Recipes</a>
+    <br>
+    <ul>
+        {% for x in object_list %}
+            <li><a href='{{ x.get_absolute_url }}'>{{ x.name }}</a>
+            </li>
+            <a href={{ x.get_delete_url }}>delete</a>
+
+        {% endfor %}
+    </ul>
+
+
+    <table class="table-bordered table-hover">
+    <tr>
+        <th >name  </th>
+          <th >age   </th>
+          <th >adress  </th>
+    </tr>
+       <tr >
+        <td >name  </td>
+          <td >age   </td>
+           <td ><button class="btn btn-success">halla</button>  </td>
+    </tr>
+           <tr >
+        <td >name  </td>
+          <td >age   </td>
+          <td >adress  </td>
+    </tr>
+
+    </table>
+
+{% endblock %}

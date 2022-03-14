@@ -1,0 +1,14 @@
+ {% extends "../ocr-home.html" %}
+{% block content %}
+
+   {% if not request.user.is_authenticated %}
+     <form method="POST">
+    {% csrf_token%}
+         {{ form.as_p }}
+        <button  type="submit">login</button>
+          </form>
+         <p>create an acount pleas</p> <a href="/register">register</a>
+   {% else %}
+     <p>you are already logged in.would you want to <a href="/logout">logout</a> </p>
+   {% endif %}
+{% endblock %}

@@ -1,0 +1,7 @@
+{% for object in object_list %}
+    {% if  object.tittle %}
+            <h2>{{ object.tittle }}</h2>
+            <h3>{{ object.content}}</h3>
+            <h3> {{ object.timestamp }}</h3>
+    {% endif %}
+{% endfor %}
